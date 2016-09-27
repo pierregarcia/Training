@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="85dp">
+    <ImageView
+        local:MvxBind="DrawableName Icon, Converter=StringFormat, ConverterParameter='drawable/{0}'"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/iconView"
+        android:layout_margin="5dp"
+        android:layout_centerVertical="true" />
+    <TextView
+        local:MvxBind="Text Name"
+        android:text="Hodor Ipsum"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@id/iconView"
+        android:id="@+id/txtName"
+        android:layout_marginTop="5dp"
+        style="@android:style/TextAppearance.Large" />
+    <TextView
+        local:MvxBind="Text Description"
+        android:text="Hodor hodor; hodor HODOR hodor, hodor hodor - hodor. Hodor. Hodor hodor - HODOR hodor, hodor hodor, hodor. Hodor hodor hodor? Hodor hodor - hodor hodor hodor hodor hodor! Hodor, hodor. Hodor. Hodor, hodor; hodor hodor hodor! Hodor hodor... Hodor hodor hodor, hodor. Hodor hodor. Hodor."
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtName"
+        android:id="@+id/txtDescription"
+        android:layout_toRightOf="@id/iconView" />
+</RelativeLayout>

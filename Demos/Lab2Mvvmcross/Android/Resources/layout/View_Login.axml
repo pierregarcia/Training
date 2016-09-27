@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:padding="15dp">
+    <ImageView
+        android:src="@drawable/Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp" />
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/HeightEditText"
+        android:hint="@string/Login_Label_Email"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="15dp"
+        local:MvxBind="Text Username " />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/HeightEditText"
+        android:hint="@string/Login_Label_Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="15dp"
+        android:id="@+id/userPassword" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+        <Button
+            android:text="@string/Login_Button_ForgotPassword"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/HeightButton"
+            android:layout_weight="0.56" />
+        <Button
+            android:id="@+id/loginBt"
+            android:text="@string/Login_Button_Login"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/HeightButton"
+            android:layout_weight="0.44"
+            local:MvxBind="Click DoLogin" />
+    </LinearLayout>
+    <Button
+        android:text="@string/Login_Button_Register"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/HeightButton"
+        android:drawableLeft="@drawable/ic_action_user"
+        android:drawablePadding="10dp" />
+</LinearLayout>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Lab2Mvvmcross Android</string>
+ 	<string name="OK">OK</string>
+	<string name="Close">Close</string>
+	<string name="Login">Login</string>
+	<string name="AuthError_Message">Invalid Username or Password</string>
+	<string name="AuthError_Title">Authentication Error</string>
+	<string name="Login_Label_Password">Password</string>
+	<string name="Login_Button_ForgotPassword">Forgot Password?</string>
+	<string name="Login_Button_Login">Login</string>
+	<string name="Login_Button_Register">Register a new account</string>
+	<string name="Login_Label_Email">Email</string>
+</resources>
