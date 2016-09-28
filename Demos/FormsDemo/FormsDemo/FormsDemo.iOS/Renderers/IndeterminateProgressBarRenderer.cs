@@ -1,27 +1,24 @@
 ﻿using System;
-using Xamarin.Forms.Platform.iOS;
-using Xamarin.Forms;
-using System.Threading.Tasks;
 using System.Reactive.Linq;
-using UIKit;
-using System.Reactive.Concurrency;
 using System.Threading;
 using FormsDemo;
-using FormsDemo.iOS;
+using FormsDemo.iOS.Renderers;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(IndeterminateProgressBar), typeof(IndeterminateProgressBarRenderer))]
-namespace Vingo.iOS.Renderers
+namespace FormsDemo.iOS.Renderers
 {
-    public class IndeterminateProgressBarRenderer : ProgressBarRenderer
+    public class IndeterminateProgressBarRenderer: ProgressBarRenderer
     {
 
-        private IDisposable subscription;
+        private IDisposable _subscription;
 
         protected override void OnElementChanged(ElementChangedEventArgs<ProgressBar> e)
         {
             base.OnElementChanged(e);
             var customProgressBar = (IndeterminateProgressBar)Element;
-            if (Control != null && IndeterminateProgressBar != null)
+            if (Control != null && customProgressBar != null)
             {
                 Control.ProgressTintColor = customProgressBar.ProgressColor.ToUIColor();
             }
@@ -30,34 +27,31 @@ namespace Vingo.iOS.Renderers
         protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
-            if (e.PropertyName == "IsVisible")
+            if (e.PropertyName.Equals("Renderer", StringComparison.OrdinalIgnoreCase))
             {
-                if (Element.IsVisible)
+                if (_subscription != null)
                 {
-                    subscription = Observable
-                        .Interval(TimeSpan.FromMilliseconds(25))
-                        .ObserveOn(SynchronizationContext.Current)
-                        .Subscribe(
-                            x =>
-                            {
-                                if (Control.Progress >= 1.0f)
-                                {
-                                    Control.Progress = 0.0f;
-                                }
-                                else
-                                {
-                                    Control.Progress = Control.Progress + 0.0125f;
-                                }
-                            }
-                        );
+                    _subscription.Dispose();
+                    _subscription = null;
                 }
                 else
                 {
-                    if (subscription != null)
-                    {
-                        subscription.Dispose();
-                        subscription = null;
-                    }
+                    _subscription = Observable
+                      .Interval(TimeSpan.FromMilliseconds(25))
+                      .ObserveOn(SynchronizationContext.Current)
+                      .Subscribe(
+                          x =>
+                          {
+                              if (Control.Progress >= 1.0f)
+                              {
+                                  Control.Progress = 0.0f;
+                              }
+                              else
+                              {
+                                  Control.Progress = Control.Progress + 0.0125f;
+                              }
+                          }
+                      );
                 }
             }
         }
@@ -65,9 +59,9 @@ namespace Vingo.iOS.Renderers
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            if (subscription != null)
+            if (_subscription != null)
             {
-                subscription.Dispose();
+                _subscription.Dispose();
             }
         }
     }

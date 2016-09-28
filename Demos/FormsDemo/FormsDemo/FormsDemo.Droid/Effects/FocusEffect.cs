@@ -47,9 +47,14 @@ namespace FormsDemo.Droid
 					{
 						if (((Android.Graphics.Drawables.ColorDrawable)Control.Background).Color == _backgroundColor)
 						{
-							Control.SetBackgroundColor(Android.Graphics.Color.Black);
+                            Control.SetBackgroundColor(Android.Graphics.Color.Black);
+                            if (Control is Android.Widget.EditText)
+                            {
+                                ((Android.Widget.EditText)Control).SetTextColor(Android.Graphics.Color.White);
+                            }
 						}
-						else {
+						else 
+                        {
 							Control.SetBackgroundColor(_backgroundColor);
 						}
 					}

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using FormsDemo.Services;
 using Xamarin.Forms;
 
 namespace FormsDemo
@@ -11,10 +11,11 @@ namespace FormsDemo
 		{
 			InitializeComponent();
 			this.CreateToolBarItem();
-
+            var messageService = DependencyService.Get<IMessageService>();
+            
 			button.Clicked += (sender, e) => 
 			{
-				DisplayAlert("Alert", "Button Clicked!!", "OK");
+                messageService.DisplayMessage("Alert", "Button Clicked!!");
 			};
 		}
 	}
