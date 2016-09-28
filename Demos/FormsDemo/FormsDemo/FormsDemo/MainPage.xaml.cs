@@ -14,27 +14,46 @@ namespace FormsDemo
 
 			var controlsSection = new Section("Xamarin Forms Controls", "Controls")
 			{
-				new Item("Image", (ContentPage)new ImagePage()),
-				new Item("Label", (ContentPage)new LabelPage()),
-				new Item("List View", (ContentPage)new ListViewPage()),
-				new Item("Picker", (ContentPage)new PickerPage()),
-				new Item("Progress Bar", (ContentPage)new ProgressBarPage()),
-				new Item("Search Bar", (ContentPage)new SearchBarPage()),
-				new Item("Stepper", (ContentPage)new StepperPage()),
-				new Item("Activity Indicator", (ContentPage)new ActivityIndicatorPage()),
-				new Item("Box View", (ContentPage)new BoxViewPage()),
-				new Item("Button", (ContentPage)new ButtonPage()),
-				new Item("Editor", (ContentPage)new EditorPage()),
-				new Item("Time Picker", (ContentPage)new TimePickerPage()),
-				new Item("Web View", (ContentPage)new WebViewPage()),
-				new Item("Switch", (ContentPage)new SwitchPage()),
+				new Item("Image", new ImagePage(){Title = "Image"}),
+				new Item("Label", new LabelPage(){Title = "Label"}),
+				new Item("List View", new ListViewPage(){Title = "List View"}),
+				new Item("Picker", new PickerPage(){Title = "Picker"}),
+				new Item("Progress Bar", new ProgressBarPage(){Title = "Progress Bar"}),
+				new Item("Search Bar", new SearchBarPage(){Title = "Search Bar"}),
+				new Item("Stepper", new StepperPage(){Title = "Stepper"}),
+				new Item("Activity Indicator", new ActivityIndicatorPage(){Title = "Activity Indicator"}),
+				new Item("Box View", new BoxViewPage(){Title = "Box View"}),
+				new Item("Button", new ButtonPage(){Title = "Button"}),
+				new Item("Editor", new EditorPage(){Title = "Editor"}),
+				new Item("Time Picker", new TimePickerPage(){Title = "Time Picker"}),
+				new Item("Web View", new WebViewPage(){Title = "Web View"}),
+				new Item("Switch", new SwitchPage(){Title = "Switch"}),
 			};
 			var layoutSection = new Section("Xamarin Forms Layouts", "Layouts")
 			{
-				new Item("Stack Layout", (ContentPage)new LayoutStackLayoutPage()),
-				new Item("Absolute Layout", (ContentPage)new LayoutAbsoluteLayoutPage()),
-				new Item("Relative Layout", (ContentPage)new LayoutRelativeLayoutPage()),
-				new Item("Grid", (ContentPage)new LayoutGridPage()),
+				new Item("Stack Layout", new LayoutStackLayoutPage(){Title = "Stack Layout"}),
+				new Item("Absolute Layout", new LayoutAbsoluteLayoutPage(){Title = "Absolute Layout"}),
+				new Item("Relative Layout", new LayoutRelativeLayoutPage(){Title = "Relative Layout"}),
+				new Item("Grid", new LayoutGridPage(){Title = "Grid"}),
+				new Item("Scroll View", new LayoutScrollViewPage(){Title = "Scroll View"}),
+			};
+
+			var navigationSection = new Section("Xamarin Forms Navigation", "Navigation")
+			{
+				new Item("Master Detail", new HamburgerPage(){Title="Master Detail"}),
+				new Item("Tabbed Page", new DemoTabbedPage(){Title="Tabbed Page"}),
+				new Item("Pop Page", new PopNavigationPage(){Title="Navigation Pop"}),
+			};
+
+			var bindingSection = new Section("Xamarin Forms Bindings", "Bindings")
+			{
+				new Item("InterElement Binding", new InterElementBinding(){Title="InterElement Binding"}),
+			};
+
+			var othersSection = new Section("Xamarin Forms Customize", "Customize")
+			{
+				new Item("Effects", new EffectPage(){Title="Effect"}),
+				new Item("Renderer", new RendererPage(){Title="Renderer"}),
 			};
 
 
@@ -42,6 +61,9 @@ namespace FormsDemo
 			{
 				controlsSection,
 				layoutSection,
+				navigationSection,
+				bindingSection,
+				othersSection
 			};
 			BindingContext = grouppedItems;
 		}
@@ -75,9 +97,9 @@ namespace FormsDemo
 	public class Item
 	{
 		public string Title { get; private set; }
-		public ContentPage Page { get; private set; }
+		public Page Page { get; private set; }
 
-		public Item(string name, ContentPage page)
+		public Item(string name, Page page)
 		{
 			Title = name;
 			Page = page;

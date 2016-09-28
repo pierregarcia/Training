@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="FormsDemo.LayoutScrollViewPage">
+	<ScrollView HorizontalOptions="Fill" VerticalOptions="Fill">
+		<Label VerticalOptions="EndAndExpand" HorizontalOptions="Fill" FontSize="30" HorizontalTextAlignment="Center">
+			<Label.Text>
+				Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor, hodor. Hodor HODOR hodor, hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor, hodor. Hodor hodor hodor. Hodor. Hodor! Hodor hodor, HODOR hodor, hodor hodor hodor! Hodor hodor - hodor; hodor hodor - hodor, hodor. Hodor hodor. Hodor. Hodor hodor hodor. Hodor! Hodor hodor, hodor hodor hodor, hodor. Hodor hodor?!
+
+				Hodor hodor HODOR! Hodor hodor, hodor. Hodor hodor; hodor hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor - hodor... Hodor hodor hodor; hodor hodor hodor! Hodor! Hodor hodor, hodor, hodor. Hodor hodor? Hodor, hodor hodor?!
+
+				Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor - hodor?! Hodor. Hodor hodor hodor hodor hodor, hodor, hodor hodor. Hodor hodor HODOR! Hodor hodor hodor hodor - hodor hodor. Hodor hodor; hodor hodor. Hodor. Hodor, hodor... Hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor hodor hodor hodor hodor - hodor? Hodor hodor - hodor; hodor hodor? Hodor. Hodor hodor... Hodor hodor hodor hodor hodor hodor!
+
+				Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor - hodor. Hodor. Hodor hodor - hodor; hodor hodor hodor! Hodor HODOR hodor, hodor hodor - hodor hodor! Hodor, hodor. Hodor. Hodor, hodor; hodor hodor; hodor hodor... Hodor hodor hodor hodor hodor?! Hodor hodor HODOR! Hodor hodor hodor hodor - hodor, hodor. Hodor hodor. Hodor. Hodor, hodor, hodor. Hodor hodor - hodor?! Hodor, HODOR hodor, hodor hodor, hodor. Hodor hodor hodor hodor; hodor hodor.
+
+				Hodor. Hodor hodor - hodor hodor hodor?! Hodor hodor HODOR! Hodor hodor, hodor. Hodor HODOR hodor, hodor hodor. Hodor. Hodor hodor HODOR! Hodor hodor - hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor; hodor hodor, hodor. Hodor hodor hodor hodor?! Hodor hodor HODOR! Hodor hodor - hodor. Hodor hodor HODOR! Hodor hodor hodor hodor... Hodor hodor hodor, hodor, hodor hodor. Hodor hodor - HODOR hodor, hodor hodor hodor hodor.	
+			</Label.Text>
+		</Label>
+	</ScrollView>
+</ContentPage>

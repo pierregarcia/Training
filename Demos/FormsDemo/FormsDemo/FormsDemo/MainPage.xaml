@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:FormsDemo"
              x:Class="FormsDemo.MainPage">
 	     <ListView 
-			VerticalOptions="StartAndExpand"
-	       	HorizontalOptions="StartAndExpand"
+			VerticalOptions="Fill"
+	       	HorizontalOptions="Fill"
 		 	ItemSelected="OnItemSelected"
 		  	ItemsSource="{Binding .}"
 		 	IsGroupingEnabled="true"

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+        xmlns:local="clr-namespace:FormsDemo;assembly=FormsDemo"
+		x:Class="FormsDemo.InterElementBinding">
+ 	<ContentPage.Resources>
+	    <ResourceDictionary>
+	      	<local:NullToBoolConverter x:Key="IsNullToBool" />
+	    </ResourceDictionary>
+  	</ContentPage.Resources>
+ 	<ContentPage.BindingContext>
+        <local:BindingViewModel />
+  	</ContentPage.BindingContext>
+	<AbsoluteLayout>
+		<ActivityIndicator
+			BindingContext="{x:Reference Photo}"
+			IsEnabled="{Binding IsLoading}"
+			IsVisible="{Binding IsLoading}"
+			IsRunning="{Binding IsLoading}"
+			WidthRequest="300" />
+		<Image 
+			Source="{Binding ImgUrl}"
+			x:Name="Photo"
+			WidthRequest="300"
+			IsVisible="{Binding ImgUrl, Converter={StaticResource IsNullToBool}, ConverterParameter=I}" />	
+	</AbsoluteLayout>
+</ContentPage>

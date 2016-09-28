@@ -13,10 +13,7 @@ namespace FormsDemo
         {
             InitializeComponent();
 
-			MainPage = new NavigationPage(new FormsDemo.MainPage()) 
-			{
-				Title = "Xamarin Forms Controls"
-			};
+			MainPage = new NavigationPage(new FormsDemo.MainPage() { Title = "Xamarin Forms Demo"});
         }
 
         protected override void OnStart()
